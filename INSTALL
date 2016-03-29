@@ -1,0 +1,9 @@
+Building Meowstake
+
+See doc/readme-qt.rst for instructions on building Meowstake QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Meowstake.
+
+See doc/build-*.txt for instructions on building Meowstaked,
+the intended-for-services, no-graphical-interface, reference
+implementation of Meowstake.

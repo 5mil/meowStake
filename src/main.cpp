@@ -987,19 +987,19 @@ int64_t GetProofOfWorkReward(int64_t nFees)
  
     if(pindexBest->nHeight+1 <= 2)
     {
-        nSubsidy = 10000 * COIN;
+        nSubsidy = 5000000 * COIN;
     }
 	     else if(pindexBest->nHeight+1 >= 3  && pindexBest->nHeight+1 <= 201)
     {
-        nSubsidy = 2 * COIN;
+        nSubsidy = 1 * COIN;
     }
         else if(pindexBest->nHeight+1 >= 201  && pindexBest->nHeight+1 <= 210101)
     {
-        nSubsidy = 20 * COIN;
+        nSubsidy = 2 * COIN;
     }
         else if(pindexBest->nHeight+1 >= 210102)
     {
-        nSubsidy = 10 * COIN;
+        nSubsidy = 5 * COIN;
     }
       
     if (fDebug && GetBoolArg("-printcreation"))

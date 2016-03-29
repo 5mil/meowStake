@@ -2545,63 +2545,10 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nTime    = 1459203204;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         //block.nNonce   = 1709179;
-        block.nNonce   = 0;
+        block.nNonce   = 62760430;
         
         // uncomment to log genesis block info        
-//      //  start
-        if (true && block.GetHash() != hashGenesisBlock)
-                       {
-                           printf("Searching for genesis block...\n");
-                           uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
-                           uint256 thash;
 
-                           while (true)
-                           {
-                               thash = block.GetHash();
-                               if (thash <= hashTarget)
-                                   break;
-                               if ((block.nNonce & 0xFFF) == 0)
-                               {
-                                   printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-                               }
-                               ++block.nNonce;
-                               if (block.nNonce == 0)
-                               {
-                                   printf("NONCE WRAPPED, incrementing time\n");
-                                   ++block.nTime;
-                               }
-                           }
-                           printf("block.nTime = %u \n", block.nTime);
-                           printf("block.nNonce = %u \n", block.nNonce);
-                           printf("blok.nVersion = %u \n", block.nVersion);
-                           printf("block.GetHash = %s\n", block.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-                           printf("block.hashMerkleRoot = %s \n", block.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
-
-                       }
-    
-	
-
- /*      if (true && (block.GetHash() != hashGenesisBlock)) {
-                block.nNonce = 0;
-
-                // This will figure out a valid hash and Nonce if you're
-                // creating a different genesis block:
-                uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
-                while (block.GetHash() > hashTarget)
-                {
-                    ++block.nNonce;
-                    if (block.nNonce == 0)
-                    {
-                        printf("NONCE WRAPPED, incrementing time");
-                        ++block.nTime;
-                    }
-                    // if (block.nNonce % 10000 == 0)
-                    // {
-                    //     printf("nonce %08u: hash = %s \n", block.nNonce, block.GetHash().ToString().c_str());
-                    // }
-                }
-            }
-*/
         block.print();
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
@@ -2609,7 +2556,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         //assert(block.hashMerkleRoot == uint256("0x365b59809dee2d3884f516ecbbe8f8788a498c4378ed26645ba856fceae6bfd2"));
-        assert(block.hashMerkleRoot == uint256("")); 
+        assert(block.hashMerkleRoot == uint256("0x224c679753d3135ae83649655f5da35e879191db5170dd530ad94bd61b18062e")); 
 
 	    block.print();
         //assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
